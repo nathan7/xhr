@@ -1,6 +1,6 @@
 # Xhr
 
-An tiny and minimal function for XMLHttpRequests. Falls back to ActiveX for older versions of Internet Explorer.
+A tiny and minimal function for XMLHttpRequests. Falls back to ActiveX for older versions of Internet Explorer.
 
 ## Installation
 
