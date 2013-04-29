@@ -1,12 +1,12 @@
 {
   "name": "xhr",
   "repo": "nathan7/xhr",
-  "description": "matthewp/xhr, as promised.",
-  "version": "0.0.1",
+  "description": "xhr, as promised.",
+  "version": "1.0.0",
   "keywords": [],
   "dependencies": {
-    "matthewp/xhr": "*",
-    "then/promise": "*"
+    "then/promise": "*",
+    "yields/xhr": "*"
   },
   "development": {},
   "license": "MIT",

@@ -1,23 +1,20 @@
-# Xhr
+# xhr
 
-A tiny and minimal function for XMLHttpRequests. Falls back to ActiveX for older versions of Internet Explorer.
-Returns a *promise*.
+A tiny and minimal module for HTTP requests. Returns a *promise*.
 
 ## Installation
 
-**Xhr** is a [component](https://github.com/component/component).
+    $ npm install nathan7/xhr
+
+  or
 
     $ component install nathan7/xhr
 
 ## API
 
-### xhr(url)
+### xhr(url, options)
 
-Perform a GET request to the given url, calling the callback when complete. If an error is encountered, the errback function will be called with an [XhrError](https://github.com/matthewp/xhrerror) instance.
-
-### xhr(options)
-
-Perform an HTTP requests with the given ``options``, calling ``callback`` when complete. If an error is encountered, the errback function will be called with an [XhrError](https://github.com/matthewp/xhrerror) instance.
+Perform a GET request to the given URL with the given options.
 
 #### options
 
@@ -33,7 +30,7 @@ The HTTP method to use (GET, POST, PUT, DELETE, etc.).  Defaults to ``GET``.
 
 ##### headers
 
-An ``Object`` in which the keys are the header key and the values are the header value. Example
+An object containing headers.
 
 ```javascript
 headers: {
@@ -43,21 +40,22 @@ headers: {
 
 ##### data
 
-The data to send along as the body of the request. For example, in a ``POST`` request.
+The data to send along as the body of the request.
 
 ##### credentials
 
+Browser-only.
 If true, the ``withCredentials`` value will be applied to the XMLHttpRequest object, which allows for [CORS](http://www.w3.org/TR/cors/) requests.
 
 ## Examples
 
 ```javascript
-var xhr = require('xhr');
+var xhr = require('xhr')
 
 var fooData = JSON.stringify({
   foo: 'bar',
   baz: 'qux'
-});
+})
 
 xhr({
   url: 'http://example.com/foos',
@@ -67,11 +65,10 @@ xhr({
   },
   method: 'POST',
   data: fooData
-}.then(
-  function onSuccess() {
-    console.log('It worked!');
-  },
-  function onError(err) {
-    console.log('There was an error: ' + err.message);
-  });
+}.then(function onSuccess() {
+    console.log('It worked!')
+  }
+  , function onError(err) {
+    console.log('There was an error: ' + err.message)
+  })
 ```
