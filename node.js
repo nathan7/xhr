@@ -25,7 +25,7 @@ function xhr(url, options) {
       req.write(options.data)
     req.end()
     function onRes(_res) {
-      if(req.status < 400)
+      if(_res.statusCode < 400)
         augment({}, resolve)
       else
         augment(new Error('Server responded with a status of ' + _res.statusCode), reject)
