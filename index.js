@@ -6,7 +6,7 @@ module.exports =
 function xhr(url, options) {
   var req = xobj()
 
-  if(typeof url === 'object')
+  if (typeof url === 'object')
     options = url, url = null
   if (!url)
     url = options.url
@@ -15,14 +15,14 @@ function xhr(url, options) {
 
   req.open(options.method || 'GET', url, true)
 
-  if(options.credentials)
+  if (options.credentials)
     req.withCredentials = true 
   if (options.headers) for (var key in options.headers) if (hop.call(key, options.headers))
     req.setRequestHeader(key, options.headers[key])
 
   return new Promise(function(resolve, reject) {
     req.onload = function() {
-      if(req.status < 400)
+      if (req.status < 400)
         augment({}, resolve)
       else
         augment(new Error('Server responded with a status of ' + req.status), reject)
@@ -44,7 +44,7 @@ function parseHeaders(xhr) {
   var text = xhr.getAllResponseHeaders().split('\n')
     , headers = {}
     , m
-  for (var i = 0, len = text.length; i < len; i++) if(text[i])
+  for (var i = 0, len = text.length; i < len; i++) if (text[i])
     if (m = text[i].match(/^([^:]+): (.*)/))
       headers[m[1].toLowerCase()] = m[2]
   return headers
