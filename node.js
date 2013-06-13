@@ -15,7 +15,7 @@ function xhr(url, options) {
 
   var _options = Url.parse(url)
   _options.method = options.method || 'GET'
-  if (_options.headers)
+  if (options.headers)
     _options.headers = options.headers
 
   return new Promise(function(resolve, reject) {
