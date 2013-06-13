@@ -1,6 +1,6 @@
 {
   "name": "xhr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "xhr, as promised.",
   "main": "node.js",
   "browser": "index.js",
