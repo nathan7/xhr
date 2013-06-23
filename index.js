@@ -21,7 +21,8 @@ function xhr(url, options) {
     req.setRequestHeader(key, options.headers[key])
 
   return new Promise(function(resolve, reject) {
-    req.onload = function() {
+    req.onreadystatechange = function() {
+      if (req.readyState !== 4) return
       if (req.status < 400)
         augment({}, resolve)
       else
