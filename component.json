@@ -2,7 +2,7 @@
   "name": "xhr",
   "repo": "nathan7/xhr",
   "description": "xhr, as promised.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [],
   "dependencies": {
     "then/promise": "*",
