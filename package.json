@@ -2,8 +2,10 @@
   "name": "xhr",
   "version": "1.0.3",
   "description": "xhr, as promised.",
-  "main": "node.js",
-  "browser": "index.js",
+  "main": "index.js",
+  "browser": {
+    "./node.js": false
+  },
   "dependencies": {
     "promise": "~2.0.0",
     "xhr": "git://github.com/nathan7/xhr-obj"

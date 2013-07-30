@@ -6,13 +6,6 @@ var hop = ({}).hasOwnProperty
 
 module.exports =
 function xhr(url, options) {
-  if(typeof url === 'object')
-    options = url, url = null
-  if (!url)
-    url = options.url
-  if (!options)
-    options = {}
-
   var _options = Url.parse(url)
   _options.method = options.method || 'GET'
   if (options.headers)
