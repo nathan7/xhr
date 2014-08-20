@@ -1,5 +1,4 @@
-var hop = ({}).hasOwnProperty
-  , Promise = require('promise')
+var Promise = require('promise')
   , xobj = require('xhr')
 
 module.exports =
@@ -9,7 +8,7 @@ function xhr(url, options) {
 
   if (options.credentials)
     req.withCredentials = true 
-  if (options.headers) for (var key in options.headers) if (hop.call(key, options.headers))
+  if (options.headers) for (var key in options.headers)
     req.setRequestHeader(key, options.headers[key])
 
   return new Promise(function(resolve, reject) {
