@@ -7,7 +7,7 @@
     "./node.js": false
   },
   "dependencies": {
-    "promise": ">2 <4",
+    "promise": ">2 <7",
     "xhr": "git://github.com/nathan7/xhr-obj"
   },
   "devDependencies": {},
