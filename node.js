@@ -18,6 +18,9 @@ function xhr(url, options) {
       req.write(options.data)
     req.end()
     function onRes(_res) {
+      if (options.encoding)
+        _res.setEncoding(options.encoding)
+
       if(_res.statusCode < 400)
         augment({}, resolve)
       else
