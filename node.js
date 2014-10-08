@@ -21,7 +21,7 @@ function xhr(url, options) {
       if (options.encoding)
         _res.setEncoding(options.encoding)
 
-      if(_res.statusCode < 400)
+      if (_res.statusCode < 400)
         augment({}, resolve)
       else
         augment(new Error('Server responded with a status of ' + _res.statusCode), reject)
