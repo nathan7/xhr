@@ -14,8 +14,13 @@ function xhr(url, options) {
   return new Promise(function(resolve, reject) {
     var req = (_options.protocol === 'https:' ? https : http).request(_options, onRes)
     req.on('error', reject)
+
+    if (options.encoding)
+      req.setEncoding(options.encoding)
+
     if (options.data)
       req.write(options.data)
+
     req.end()
     function onRes(_res) {
       if (options.encoding)
