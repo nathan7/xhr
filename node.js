@@ -7,6 +7,7 @@ var hop = ({}).hasOwnProperty
 module.exports =
 function xhr(url, options) {
   var _options = Url.parse(url)
+  _options.agent = false
   _options.method = options.method || 'GET'
   if (options.headers)
     _options.headers = options.headers
