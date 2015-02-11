@@ -1,6 +1,4 @@
-var _xhr = typeof window == 'undefined'
-  ? require('./node')
-  : require('./browser')
+var _xhr = require('./core')
 
 module.exports = function xhr(url, options) {
   if (typeof url === 'object')

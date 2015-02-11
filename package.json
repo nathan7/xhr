@@ -4,7 +4,7 @@
   "description": "xhr, as promised.",
   "main": "index.js",
   "browser": {
-    "./node.js": false
+    "./core.js": "./core-browser.js"
   },
   "dependencies": {
     "promise": ">2 <7",
